@@ -14,7 +14,7 @@ namespace BestRestaurant.Models
 
     public string Name { get; set; }
 
-    public double RoomRating { get; set; }
+    public int RoomRating { get; set; }
 
 
   }
