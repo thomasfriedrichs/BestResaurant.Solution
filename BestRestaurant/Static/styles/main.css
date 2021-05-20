@@ -1,0 +1,39 @@
+:root {
+  --fg-color: #445;
+}
+
+body {
+  font-family: Palatino;
+  background-color: #eee;
+  color: var(--fg-color);
+  font-size: 20px;
+}
+
+body main {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+body main form {
+  background-color: #ddd;
+}
+
+body main form input, body main form select {
+  font-size: 20px;
+  font-family: Palatino;
+  font-style: italic;
+  border-bottom: 1px solid var(--fg-color);
+}
+
+body footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  width: 100vw;
+  background-color: #ccc;
+  padding: 20px;
+}
+/*# sourceMappingURL=main.css.map */
