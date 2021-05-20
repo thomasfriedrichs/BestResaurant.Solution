@@ -18,8 +18,7 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Index()
     {
-      ViewBag.Restaurants = _db.Restaurants.ToList();
-      List<Dish> model = _db.Dishes.ToList();
+      List<Dish> model = _db.Dishes.Include(dish => dish.Restaurant).ToList();
       return View(model);
     }
 

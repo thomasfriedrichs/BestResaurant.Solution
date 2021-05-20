@@ -7,12 +7,16 @@
 <h4>Edit this dish: @Html.DisplayFor(model => model.Name)</h4>
 @using (Html.BeginForm())
 {
+  @Html.HiddenFor(model => model.DishId)
+
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.Restaurant)
+  @Html.DropDownList("RestaurantId")
   <label for="RoomRating">Rating</label>
-  <input id="RoomRating" name="Rating" type="number" min=0 max=5 />
-  <button type="submit">Add</button>
+  <input id="RoomRating" name="Rating" type="number" min=0 max=5 value="@Model.Rating" />
+  <button type="submit">Save</button>
 }
 <p>@Html.ActionLink("Show all items", "Index")</p>
