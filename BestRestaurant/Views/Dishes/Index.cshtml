@@ -1,0 +1,26 @@
+@{ Layout = "_Layout"; }
+
+@using Microsoft.EntityFrameworkCore;
+@using BestRestaurant.Models;
+@model List<Dish>;
+
+<h1>Dishes</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No dishes have been added yet!</h3>
+} 
+
+@foreach (Dish dish in Model)
+{
+  string restaurantName = "no restaurant";
+  if(ViewBag.Restaurants[dish.RestaurantId] != null)
+  {
+    dish.Include(dish => dish.Restaurant);
+    restaurantName = dish.Restaurant.Name;
+  }
+  
+  <li>@Html.ActionLink($"{dish.Name}", "Details", new { id = dish.DishId }) | @restaurantName</li>
+}
+
+<p>@Html.ActionLink("Add new dish", "Create")</p>

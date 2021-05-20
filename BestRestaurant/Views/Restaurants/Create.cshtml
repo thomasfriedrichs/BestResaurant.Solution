@@ -1,0 +1,14 @@
+@{ Layout = "_Layout"; }
+
+@model BestRestaurant.Models.Restaurant
+
+<h4>Add a New Restaurant</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <label for="RoomRating">Room Rating</label>
+  <input id="RoomRating" name="RoomRating" type="number" min=0 max=5 />
+  <button type="submit">Add</button>
+}
+<p>@Html.ActionLink("Cancel", "Index")</p>
