@@ -9,6 +9,8 @@
   @Html.TextBoxFor(model => model.Name)
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.Restaurant)
+  @Html.DropDownList("RestaurantId")
   <label for="RoomRating">Rating</label>
   <input id="RoomRating" name="Rating" type="number" min=0 max=5 />
   <button type="submit">Add</button>
